@@ -18,7 +18,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="/script/app.js"></script>
   </head>
 
   <body>
@@ -48,15 +47,13 @@
                         <li><a href="#">Settings</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right right-navbar-nav">
-
                         <!-- Login Form -->
                         <li class="hidden-sm hidden-xs">
-                            <form id="loginform" class="navbar-form pull-left" method="post" action="#" validate="true">
+                            <form class="navbar-form pull-left" method="post" action="#" validate="true">
                                 <div class="form-group">
-                                    <span id="login_failed" style="display:none">username/password invalid</span>
                                     <input type="text" class="form-control require-validation" placeholder="Username" v-email="1" v-require="1" name="username" id="username_id"  />
                                     <input type="password" class="form-control require-validation" placeholder="Password" v-require="1" v-minlength="6" name="password" id="password_id" />
-                                    <input type="submit" name="signin_submit" class="btn btn-primary" value="Login" onsubmit="loginform();"/>
+                                    <input type="submit" name="signin_submit" class="btn btn-primary" value="Login" />
                                     <input type="hidden" name="action" value="login" />
                                     <input type="hidden" name="#" value="1" />
                                 </div>
@@ -76,18 +73,32 @@
 
     </nav>
     </header>
-    <div class="main-container container">
-      <div class="welcome-container">
-        Welcome to EdConnection
-      </div>
-      <div>
-        <a class="btn" href="/login.php">Login</a>
+    <div class="main-container container-fluid">
+      <div class="row">
+        <section class="lesson-container col-sm-2">
+          lesson-container
+        </section>
+        
+        <section class="content-container col-sm-7">
+          content-container
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-8">
+
+              </div>
+              <div class="col-lg-4">
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="nav-container col-sm-3">
+          nav-container
+        </section>
       </div>
     </div>
     <style>
-      #login_failed{
-        color: red;
-      }
       section{
         border:1px solid black;
         float:left;
@@ -97,7 +108,6 @@
       .main-container{
         overflow: auto;
       }
-
     </style>
   </body>
 
