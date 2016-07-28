@@ -23,58 +23,74 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-inverse">
-        <!-- Left menu toggle button -->
-        <button type="button" id="main-menu-toggle">
-            <i class="navbar-icon fa fa-bars icon"></i>
-        </button>
-        <div class="container-fluid">
-            <!-- Logo -->
-            <div class="navbar-header">
-                <button tye="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="#" class="navbar-brand">EdConnection</a>
-            </div>
-
-            <!-- Menu Items -->
-            <div>
-                <ul class="collapse navbar-collapse" id="mainNavBar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Classes</a></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav pull-right right-navbar-nav">
-
-                        <!-- Login Form -->
-                        <li class="hidden-sm hidden-xs">
-                            <form id="loginform" class="navbar-form pull-left" method="post" action="#" validate="true">
-                                <div class="form-group">
-                                    <span id="login_failed" style="display:none">username/password invalid</span>
-                                    <input type="text" class="form-control require-validation" placeholder="Username" v-email="1" v-require="1" name="username" id="username_id"  />
-                                    <input type="password" class="form-control require-validation" placeholder="Password" v-require="1" v-minlength="6" name="password" id="password_id" />
-                                    <input type="submit" name="signin_submit" class="btn btn-primary" value="Login" onsubmit="loginform();"/>
-                                    <input type="hidden" name="action" value="login" />
-                                    <input type="hidden" name="#" value="1" />
-                                </div>
-                            </form>
-                        </li>
-
-                        <!-- Login Link -->
-                        <li class="visible-sm visible-xs"><a href="#"><i class="dropdown-icon fa fa-sign-in"></i>&nbsp; Login</a></li>
-                    </ul>
-                </ul>
-
-
-
-            </div>
-
-        </div>
-
-    </nav>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">EdConnection</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a href="#">Classes</a></li>
+		  <li><a href="#">Settings</a></li> 
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li data-toggle="modal" data-target="#registerPopUp"><a href="#"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+		  <div class="modal fade" id="registerPopUp">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<!-- header -->
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h1 class="modal-title">Register</h1>
+							</div>
+							<!-- body (form) -->
+							<div class="modal-body">
+								<form role="form">
+									<div class="form-group">
+										<input type="email" class="form-control" placeholder="Email">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" placeholder="Password">
+									</div>
+								</form>
+							</div>
+							<!-- button -->
+							<div class="modal-footer">
+								<button class="btn btn-primary btn-block">Register</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		  <li data-toggle="modal" data-target="#loginPopUp"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		  <div class="modal fade" id="loginPopUp">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<!-- header -->
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h1 class="modal-title">Login</h1>
+							</div>
+							<!-- body (form) -->
+							<div class="modal-body">
+								<form role="form">
+									<div class="form-group">
+										<input type="email" class="form-control" placeholder="Email">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" placeholder="Password">
+									</div>
+								</form>
+							</div>
+							<!-- button -->
+							<div class="modal-footer">
+								<button class="btn btn-primary btn-block">Register</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		</ul>
+	  </div>
+	</nav>
     </header>
     <div class="main-container container">
       <div class="welcome-container">
@@ -97,7 +113,9 @@
       .main-container{
         overflow: auto;
       }
-
+	  .modal-header {
+		  background-color: #0480be;
+	  }
     </style>
   </body>
 
