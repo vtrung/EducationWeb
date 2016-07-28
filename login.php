@@ -78,7 +78,7 @@
         <section class="lesson-container col-sm-2">
           lesson-container
         </section>
-        
+
         <section class="content-container col-sm-7">
           content-container
           <div class="container-fluid">

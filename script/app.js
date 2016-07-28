@@ -17,7 +17,7 @@ function logout(){
 
 function loginform(){
   var username = $("#username_id").val();
-  var password = $("#username_id").val();
+  var password = $("#password_id").val();
   console.log(username);
   if(login(username,password)){
     document.cookie = login_cookie+ "=" +username;
