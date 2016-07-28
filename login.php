@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">EdConnection</a>
+                <a href="index.php" class="navbar-brand">EdConnection</a>
             </div>
 
             <!-- Menu Items -->
