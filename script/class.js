@@ -1,20 +1,25 @@
-function init(){
-  // Classes Data Calls
-  function getUserClasses(user){
-    var params = {"user":user};
-    $.post("/data/getclass", params, function(results){
-      //update $("#classes") function
+
+  function getAllClasses(){
+    $.get("/data/getallclasses.php", function(results){
+      console.log(results);
     })
   };
-  function addClass(user, class){
-    var params = {"user":user, "class":class};
+  function getUserClasses(user){
+    var params = {"username":user};
+    $.post("/data/getclasses.php", params, function(results){
+      console.log(results);
+    })
+  };
+
+  function addClass(user, classid){
+    var params = {"user":user, "classid":classid};
     $.post("/data/addclass", param, function(result){
       //update $("#classes") function
     })
   }
-  function removeClass(user, class){
-    var params = {"user":user, "class":class};
-    $.post("/data/removeclass", param, function(result){
+  function removeClass(user, classid){
+    var params = {"user":user, "classid":classid};
+    $.post("/data/removeclass.php", param, function(result){
       //update $("#classes") function
     })
   }
@@ -22,9 +27,9 @@ function init(){
 
 
   // Class Lessons
-  function getClassLessons(class){
-    var params = {"class": class};
-    $.post("/data/getlessons", params, function(result){
+  function getClassLessons(classid){
+    var params = {"class": classid};
+    $.post("/data/getlessons.php", params, function(result){
       displayLessons(result);
       //update $("#lessons") function
     })
@@ -36,7 +41,3 @@ function init(){
     }
   }
   // END Class Lessons
-
-
-
-}

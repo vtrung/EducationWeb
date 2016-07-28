@@ -49,21 +49,6 @@
                         <li><a href="#">Settings</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right right-navbar-nav">
-                        <!-- Login Form -->
-                        <li class="hidden-sm hidden-xs">
-                            <form class="navbar-form pull-left" method="post" action="#" validate="true">
-                                <div class="form-group">
-                                    <input type="text" class="form-control require-validation" placeholder="Username" v-email="1" v-require="1" name="username" id="username_id"  />
-                                    <input type="password" class="form-control require-validation" placeholder="Password" v-require="1" v-minlength="6" name="password" id="password_id" />
-                                    <input type="submit" name="signin_submit" class="btn btn-primary" value="Login" />
-                                    <input type="hidden" name="action" value="login" />
-                                    <input type="hidden" name="#" value="1" />
-                                </div>
-                            </form>
-                        </li>
-
-                        <!-- Login Link -->
-                        <li class="visible-sm visible-xs"><a href="#"><i class="dropdown-icon fa fa-sign-in"></i>&nbsp; Login</a></li>
                     </ul>
                 </ul>
 
@@ -86,7 +71,6 @@
         <section class="content-container col-sm-7">
           content-container
           <div>
-
           </div>
         </section>
 
