@@ -64,18 +64,20 @@
       <div class="row">
         <section class="lesson-container col-sm-2">
           lesson-container
-          <div class="lessons">
+          <div class="my-lesson-list">
           </div>
         </section>
 
         <section class="content-container col-sm-7">
           content-container
-          <div>
+          <div class="my-content-container">
           </div>
         </section>
 
         <section class="nav-container col-sm-3">
           nav-container
+          <div class="my-class-list">
+          </div>
         </section>
       </div>
     </div>
@@ -85,7 +87,20 @@
         float:left;
         height: 600px;
       }
-
+      .my-class-container{
+        border: 1px solid grey;
+        padding: 10px;
+      }
+      .my-class-container:hover{
+        background: grey;
+      }
+      .my-lesson-container{
+        border: 1px solid grey;
+        padding: 10px;
+      }
+      .my-lesson-container:hover{
+        background: grey;
+      }
       .main-container{
         overflow: auto;
       }
