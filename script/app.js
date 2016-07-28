@@ -16,9 +16,11 @@ function login(username, password){
 }
 
 $(document).ready(function() {
+
   $("#loginform").submit(function(event){
     $("#login_failed").hide();
     loginform();
     event.preventDefault();
   })
+  
 });

@@ -77,19 +77,14 @@
       <div class="row">
         <section class="lesson-container col-sm-2">
           lesson-container
+          <div class="lessons">
+          </div>
         </section>
-        
+
         <section class="content-container col-sm-7">
           content-container
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-8">
+          <div>
 
-              </div>
-              <div class="col-lg-4">
-
-              </div>
-            </div>
           </div>
         </section>
 
