@@ -38,14 +38,5 @@ function init(){
   // END Class Lessons
 
 
-  // Login Functions
 
-  function checkLogin(){
-    //check login cookie is live, else redirect to login page/home page
-  }
-  function logout(){
-    // remove login cookie
-  }
-
-  // END Login Functions
 }

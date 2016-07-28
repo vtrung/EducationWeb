@@ -1,0 +1,44 @@
+functions needed for display:
+// AUTHENTICATION
+- login,
+  parameters: username, password
+  result: boolean
+  returns true if username and password matches, else false
+  note: i'll take care of keeping track of who is logged in with cookies in the front,
+  even though thats bad(worst) practice in the real world, just to keep it simple and get this
+  project finished.
+
+- register,
+  parameters: ?? //let me know what you want me to push
+  result: boolean
+  return true if user successfully entered in db, else false
+
+// CLASSES QUERY FUNCTIONS
+- getUserClasses,
+  parameters: username,
+  result: list of classes, ?? //figure out class information to return in class object
+  return list of classes that the user is in
+  note: need to get classid, and classname, minimum. other info such as instructor name might be good too
+
+- addClass,
+  parameters: username, classid
+  result: boolean
+  true if db added class for user is successful
+  note: this adds a class to user's classes
+
+- deleteClass,
+  parameters: username, classid
+  result: boolean
+  true if db deleted class from user is successful
+  note: this deletes a class to user's classes
+
+- getAllClass,
+  parameter: none,
+  result: list of all classes available
+  note: used to display classes for user to addClass
+
+// LESSON QUERY FUNCTIONS
+- getClassLessons,
+  parameters: classid,
+  result: list of Lessons,
+  note: this get all the lessons that belong to classid, need probably lesson name, lessonId
