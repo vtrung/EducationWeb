@@ -1,13 +1,13 @@
   // Classes Data
   var myclasses = [];
   function getAllClasses(){
-    $.get("/data/getallclasses.php", function(results){
+    $.get("/data/getAllClasses.php", function(results){
       console.log(results);
     })
   };
   function getUserClasses(user){
     var params = {"username":user};
-    $.post("/data/getclasses.php", params, function(results){
+    $.post("/data/getClasses.php", params, function(results){
       if(JSON.parse(results) != false){
         console.log(results);
         myclasses = JSON.parse(results);
@@ -26,7 +26,7 @@
   }
   function removeClass(user, classid){
     var params = {"user":user, "classid":classid};
-    $.post("/data/removeclass.php", param, function(result){
+    $.post("/data/removeClass.php", param, function(result){
       //update $(".my-class-list") function
     })
   }
@@ -48,7 +48,7 @@
   // Class Lessons
   function getClassLessons(classid){
     var params = {"classid": classid};
-    $.post("/data/getlessons.php", params, function(result){
+    $.post("/data/getLessons.php", params, function(result){
       if(JSON.parse(result) != false){
         console.log(result);
         displayLessons(JSON.parse(result));
