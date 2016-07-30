@@ -35,7 +35,7 @@
     $(".my-class-list").empty();
     for(var i = 0; i < myclasses.length; i++){
       $(".my-class-list").append(
-        "<div class='my-class-container' onclick='getClassLessons(\"" + myclasses[i].id + "\")'>"
+        "<div class='my-class-container' onclick='getClassLessons(\"" + myclasses[i].id + "\", \"" + myclasses[i].name + "\")'>"
           + myclasses[i].name +
         "</div>"
       );
@@ -46,7 +46,10 @@
 
 
   // Class Lessons
-  function getClassLessons(classid){
+  var mylessons = [];
+
+  function getClassLessons(classid, classname){
+    $(".class-title").html(classname);
     var params = {"classid": classid};
     $.post("/data/getLessons.php", params, function(result){
       if(JSON.parse(result) != false){
@@ -59,14 +62,21 @@
   }
 
   function displayLessons(lessons){
+    mylessons = lessons;
     $(".my-lesson-list").empty();
     for(var i = 0; i < lessons.length; i++){
       $(".my-lesson-list").append(
-        "<div class='my-lesson-container' onclick='getLesson(\"" + lessons[i].id + "\")'>"
+        "<div class='my-lesson-container' onclick='displayLesson(\"" + i + "\")'>"
           + lessons[i].name +
         "</div>"
       );
     }
+  }
+
+  function displayLesson(index){
+    $(".content-title").html(mylessons[index].name);
+    $(".content-vid").empty();
+    $(".content-vid").append('<iframe width="600" height="400" src="' + mylessons[index].vid + '" frameborder="0" allowfullscreen></iframe>');
   }
   // END Class Lessons
 
