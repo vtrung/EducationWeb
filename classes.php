@@ -25,10 +25,6 @@
   <body>
     <header>
       <nav class="navbar navbar-inverse">
-        <!-- Left menu toggle button -->
-        <button type="button" id="main-menu-toggle">
-            <i class="navbar-icon fa fa-bars icon"></i>
-        </button>
         <div class="container-fluid">
             <!-- Logo -->
             <div class="navbar-header">
