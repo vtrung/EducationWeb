@@ -50,6 +50,8 @@
 
   function getClassLessons(classid, classname){
     $(".class-title").html(classname);
+    clearLesson();
+    
     var params = {"classid": classid};
     $.post("/data/getLessons.php", params, function(result){
       if(JSON.parse(result) != false){
@@ -77,6 +79,11 @@
     $(".content-title").html(mylessons[index].name);
     $(".content-vid").empty();
     $(".content-vid").append('<iframe width="600" height="400" src="' + mylessons[index].vid + '" frameborder="0" allowfullscreen></iframe>');
+  }
+
+  function clearLesson(){
+    $(".content-title").empty();
+    $(".content-vid").empty();
   }
   // END Class Lessons
 
