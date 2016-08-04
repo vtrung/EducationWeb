@@ -1,3 +1,12 @@
+<?php
+//Turn on error reporting
+ini_set('display_errors', 'On');
+//Connects to the database
+$mysqli = new mysqli("oniddb.cws.oregonstate.edu","cooperph-db","NKWCQdcXNLL2X6T6","cooperph-db");
+if($mysqli->connect_errno){
+echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,19 +54,141 @@
 							</div>
 							<!-- body (form) -->
 							<div class="modal-body">
-								<form role="form">
-									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Email">
-									</div>
-									<div class="form-group">
-										<input type="password" class="form-control" placeholder="Password">
-									</div>
-								</form>
+				<form role="form" id='register' action='loginRegistration.php' method='post'>	
+					<table>
+						<tr>
+							<td>First name</td>
+							<td>Last name</td>
+						</tr>
+						<tr>
+							<td><input type="text" name="FName" id="firstName"/></td>
+							<td><input type="text" name="LName" id="lastName"/></td>
+						</tr>
+					
+						<tr>
+							<td>email address</td>
+							<td>password</td>
+						<tr>
+						<tr>
+							<td><input type="email" name="email" id="usrName"></td>
+							<td><input type="password" name="password" id="PW"/></td>
+						<tr>
+						
+						<tr>
+							<td>Birthdate</td>
+						</tr>
+						<tr>
+							<td><input type="date" name= "DOB" id="DOB"/></td>
+						</tr>
+						<tr>
+							<td>Role</td>
+						</tr>
+						<tr>
+							<td>
+								<select name="Role" id="Role">
+								<?php
+								if(!($stmt = $mysqli->prepare("SELECT id, role FROM Role"))){
+									echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+								}
+
+								if(!$stmt->execute()){
+									echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								if(!$stmt->bind_result($id, $role)){
+									echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								while($stmt->fetch()){
+									echo '<option value= '.$id.' "> ' . $role . '<br/>';
+								}
+								$stmt->close();
+								?>		
+							</td>
+						</tr>
+						<tr>
+							<td>Country</td>
+							<td>Language</td>
+						</tr>
+						
+						
+						<tr>
+							<td>
+								<!-- country list copied w/ permission from http://www.mediacollege.com/internet/samples/html/country-list.html -->
+								<select name="country">
+								<?php
+								if(!($stmt = $mysqli->prepare("SELECT id, Country FROM Country"))){
+									echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+								}
+
+								if(!$stmt->execute()){
+									echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								if(!$stmt->bind_result($id, $country)){
+									echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								while($stmt->fetch()){
+									echo '<option value= '.$id.' "> ' . $country . '<br/>';
+								}
+								$stmt->close();
+								?>								
+
+								</select>
+							</td>
+							<td>
+								<select name="language">
+								<?php
+								if(!($stmt = $mysqli->prepare("SELECT id, language FROM Language"))){
+									echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+								}
+
+								if(!$stmt->execute()){
+									echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								if(!$stmt->bind_result($id, $language)){
+									echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								while($stmt->fetch()){
+									echo '<option value= '.$id.' "> ' . $language . '<br/>';
+								}
+								$stmt->close();
+								?>			
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<td>Grade Level</td>
+						</tr>
+						<tr>
+							<td>
+								<select name="Grade">
+								<?php
+								if(!($stmt = $mysqli->prepare("SELECT id, name FROM Level"))){
+									echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+								}
+
+								if(!$stmt->execute()){
+									echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								if(!$stmt->bind_result($id, $name)){
+									echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+								}
+								while($stmt->fetch()){
+									echo '<option value= '.$id.' "> ' . $name . '<br/>';
+								}
+								$stmt->close();
+								?>	
+								</select>
+							</td>
+						</tr>
+					</table>
+					<!--<div class="modal-footer">
+						<input type='submit' name='Register' value='Submit' class="btn btn-primary btn-block">Register</input>
+					</div>-->
+					<input type='submit' name='Submit' value='Register' />
+				</form>
 							</div>
 							<!-- button -->
-							<div class="modal-footer">
-								<button class="btn btn-primary btn-block">Register</button>
-							</div>
+							
 						</div>
 					</div>
 			</div>
@@ -109,7 +240,6 @@
         float:left;
         height: 600px;
       }
-
       .main-container{
         overflow: auto;
       }
