@@ -25,10 +25,6 @@
   <body>
     <header>
       <nav class="navbar navbar-inverse">
-        <!-- Left menu toggle button -->
-        <button type="button" id="main-menu-toggle">
-            <i class="navbar-icon fa fa-bars icon"></i>
-        </button>
         <div class="container-fluid">
             <!-- Logo -->
             <div class="navbar-header">
@@ -63,19 +59,36 @@
     <div class="main-container container-fluid">
       <div class="row">
         <section class="lesson-container col-sm-2">
-          lesson-container
+          <div class="nav-header class-header">
+            <h3 class="class-title">
+
+            </h3>
+          </div>
           <div class="my-lesson-list">
           </div>
         </section>
 
         <section class="content-container col-sm-7">
-          content-container
+
           <div class="my-content-container">
+            <h3 class="content-title">
+            </h3>
+            <div class="content-vid-container">
+              <div class="content-vid">
+              </div>
+            </div>
+
           </div>
         </section>
 
         <section class="nav-container col-sm-3">
-          nav-container
+          <div class="nav-header class-header">
+            <h3 class="nav-title">
+              My Classes
+            </h3>
+            <button>Add a Class</button>
+          </div>
+
           <div class="my-class-list">
           </div>
         </section>
@@ -94,12 +107,29 @@
       .my-class-container:hover{
         background: grey;
       }
+
+      .nav-container{
+        padding: 0;
+      }
+      .class-header{
+        color: #4CAF50;
+        padding: 10px;
+      }
+
       .my-lesson-container{
         border: 1px solid grey;
         padding: 10px;
       }
       .my-lesson-container:hover{
         background: grey;
+      }
+
+      .content-title{
+        text-align: center;
+      }
+      .content-vid-container{
+        text-align: center;
+        padding: 20px;
       }
       .main-container{
         overflow: auto;
