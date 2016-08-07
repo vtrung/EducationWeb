@@ -188,7 +188,7 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 							</div>
 							<!-- button -->
 							<div class="modal-footer">
-								<button class="btn btn-primary btn-block">Register</button>
+								<button class="btn btn-primary btn-block">Login</button>
 							</div>
 						</div>
 					</div>
