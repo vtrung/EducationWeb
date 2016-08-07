@@ -28,12 +28,14 @@
       //update $(".my-class-list") function
     })
   }
+
   function removeClass(user, classid){
     var params = {"user":user, "classid":classid};
     $.post(url_prefix + "/data/removeClass.php", param, function(result){
       //update $(".my-class-list") function
     })
   }
+  
   function displayMyClasses(){
     console.log(myclasses);
     $(".my-class-list").empty();
