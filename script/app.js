@@ -1,8 +1,9 @@
 
 // config
-var url_prefix = ""; //in osu server, add example: "/~vtrung/";
+var url_prefix = "/~cooperph/"; //in osu server, add example: "/~vtrung/";
 // Login Functions
 var login_cookie = "edu-user";
+var successLogin = "Account Successfully Accessed";
 
 function checkLogin(){
   var cookie = document.cookie;
@@ -33,7 +34,19 @@ function loginform(){
 
 function login(username, password){
   // call server login, should return bool
-  return (username == "test" && password == "test");
+  var params = {"username": username, "password": password};
+  console.log("Parameter:");
+  console.log(params);
+  $.post(url_prefix + "/data/login.php", params, function(results){
+    if(JSON.parse(results) != false){
+      console.log(results);
+      if(result == successLogin)
+        return true;
+    } else {
+      console.log("false");
+      return false;
+    }
+  })
 }
 
 // END Login Functions
