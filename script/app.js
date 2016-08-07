@@ -1,6 +1,9 @@
 
+// config
+var url_prefix = ""; //in osu server, add example: "/~vtrung/";
 // Login Functions
 var login_cookie = "edu-user";
+
 function checkLogin(){
   var cookie = document.cookie;
   if(cookie.substring(login_cookie) >= 0)
@@ -21,7 +24,7 @@ function loginform(){
   console.log(username);
   if(login(username,password)){
     document.cookie = login_cookie+ "=" +username;
-    window.location.href = "/classes.php";
+    window.location.href = url_prefix + "/classes.php";
   } else{
       $("#login_failed").show();
   }

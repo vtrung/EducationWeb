@@ -40,7 +40,7 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 		<ul class="nav navbar-nav">
 		  <li class="active"><a href="#">Home</a></li>
 		  <li><a href="#">Classes</a></li>
-		  <li><a href="#">Settings</a></li> 
+		  <li><a href="#">Settings</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 		  <li data-toggle="modal" data-target="#registerPopUp"><a href="#"><span class="glyphicon glyphicon-user"></span>Register</a></li>
@@ -55,9 +55,9 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 							<!-- body (form) -->
 							<div class="modal-body">
 <<<<<<< HEAD
-				<form role="form" id='register' action='loginRegistration.php' method='post'>	
+				<form role="form" id='register' action='loginRegistration.php' method='post'>
 =======
-				<form role="form">	
+				<form role="form">
 >>>>>>> origin/master
 					<table>
 						<tr>
@@ -73,7 +73,7 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 							<td><input type="text" name="LName"/></td>
 >>>>>>> origin/master
 						</tr>
-					
+
 						<tr>
 							<td>email address</td>
 							<td>password</td>
@@ -87,7 +87,7 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 							<td><input type="password" name="password"/></td>
 >>>>>>> origin/master
 						<tr>
-						
+
 						<tr>
 							<td>Birthdate</td>
 						</tr>
@@ -116,21 +116,21 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 									echo '<option value= '.$id.' "> ' . $role . '<br/>';
 								}
 								$stmt->close();
-								?>		
+								?>
 							</td>
 						</tr>
 =======
 							<td><input type="date" name= "DOB"/></td>
 						</tr>
-					
+
 >>>>>>> origin/master
 						<tr>
 							<td>Country</td>
 							<td>Language</td>
 						</tr>
 <<<<<<< HEAD
-						
-						
+
+
 =======
 >>>>>>> origin/master
 						<tr>
@@ -153,7 +153,7 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 									echo '<option value= '.$id.' "> ' . $country . '<br/>';
 								}
 								$stmt->close();
-								?>								
+								?>
 
 =======
 								<option value="Afganistan">Afghanistan</option>
@@ -424,7 +424,7 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 									echo '<option value= '.$id.' "> ' . $language . '<br/>';
 								}
 								$stmt->close();
-								?>			
+								?>
 =======
 								<option value="English">English</option>
 								<option value="Spanish">Spanish</option>
@@ -456,7 +456,7 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 									echo '<option value= '.$id.' "> ' . $name . '<br/>';
 								}
 								$stmt->close();
-								?>	
+								?>
 								</select>
 							</td>
 						</tr>
@@ -488,13 +488,13 @@ echo "Connection error " . $mysqli->connect_errno . " " . $mysqli->connect_error
 								<option value="12">12th Grade</option>
 								</select>
 							</td>
-						</tr>	
+						</tr>
 					</table>
 >>>>>>> origin/master
 				</form>
 							</div>
 							<!-- button -->
-							
+
 						</div>
 					</div>
 			</div>
