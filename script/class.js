@@ -1,13 +1,17 @@
+  // Required
+  // app.js
+  // var url_prefix from app.js
+
   // Classes Data
   var myclasses = [];
   function getAllClasses(){
-    $.get("/data/getAllClasses.php", function(results){
+    $.get(url_prefix + "/data/getAllClasses.php", function(results){
       console.log(results);
     })
   };
   function getUserClasses(user){
     var params = {"username":user};
-    $.post("/data/getClasses.php", params, function(results){
+    $.post(url_prefix + "/data/getClasses.php", params, function(results){
       if(JSON.parse(results) != false){
         console.log(results);
         myclasses = JSON.parse(results);
@@ -20,16 +24,18 @@
 
   function addClass(user, classid){
     var params = {"user":user, "classid":classid};
-    $.post("/data/addclass", param, function(result){
+    $.post(url_prefix + "/data/addclass", param, function(result){
       //update $(".my-class-list") function
     })
   }
+
   function removeClass(user, classid){
     var params = {"user":user, "classid":classid};
-    $.post("/data/removeClass.php", param, function(result){
+    $.post(url_prefix + "/data/removeClass.php", param, function(result){
       //update $(".my-class-list") function
     })
   }
+  
   function displayMyClasses(){
     console.log(myclasses);
     $(".my-class-list").empty();
@@ -51,9 +57,9 @@
   function getClassLessons(classid, classname){
     $(".class-title").html(classname);
     clearLesson();
-    
+
     var params = {"classid": classid};
-    $.post("/data/getLessons.php", params, function(result){
+    $.post(url_prefix + "/data/getLessons.php", params, function(result){
       if(JSON.parse(result) != false){
         console.log(result);
         displayLessons(JSON.parse(result));
